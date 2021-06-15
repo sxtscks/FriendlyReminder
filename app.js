@@ -52,14 +52,6 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.use(session())
 
-// async function newJob(date) {
-//   const myTime = date.time.split(':').reverse().join(' ')
-//   console.log(myTime);
-//   const myNewJob = new CronJob(`${a} * * 1-5`, async function () {
-//     bot.telegram.sendMessage(ctx.chat.id, `Мама, я в телевизоре!`)
-//   });
-//   myNewJob.start()
-// }
 
 bot.start(ctx => {
   ctx.reply(`Привет, ${ctx.message.from.first_name}!`, getMainMenu())
